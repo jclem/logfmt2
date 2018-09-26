@@ -1,0 +1,16 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "target": "es5",
+    "module": "commonjs",
+    "declaration": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "removeComments": false,
+    "preserveConstEnums": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "baseUrl": ".",
+    "outDir": "./dist"
+  }
+}

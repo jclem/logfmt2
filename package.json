@@ -1,0 +1,44 @@
+{
+  "name": "logfmt2",
+  "version": "1.0.0",
+  "description": "Parses logs and stringifies logs into the logfmt format",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jclem/logfmt2.git"
+  },
+  "keywords": [
+    "logfmt",
+    "logging"
+  ],
+  "jest": {
+    "roots": [
+      "<rootDir>/lib"
+    ],
+    "transform": {
+      "^.+\\.ts$": "ts-jest"
+    },
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.tsx?$",
+    "moduleFileExtensions": [
+      "js",
+      "ts"
+    ]
+  },
+  "author": "Jonathan Clem <jclem@github.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jclem/logfmt2/issues"
+  },
+  "homepage": "https://github.com/jclem/logfmt2#readme",
+  "devDependencies": {
+    "@types/jest": "^23.3.2",
+    "jest": "^23.6.0",
+    "prettier": "^1.14.3",
+    "ts-jest": "^23.10.2",
+    "tslint": "^5.11.0",
+    "typescript": "^3.0.3"
+  }
+}
