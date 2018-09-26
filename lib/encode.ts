@@ -3,7 +3,7 @@ export type Encodeable = {[key: string]: any}
 /**
  * Encode an object into the logfmt format.
  */
-export function encode(obj: Encodeable): string {
+export default function encode(obj: Encodeable): string {
   let result = ''
 
   for (const key in obj) {
@@ -17,7 +17,7 @@ export function encode(obj: Encodeable): string {
       encodedValue = encodeString(value.toString())
     }
 
-    result += `${key}=${encodedValue} `
+    result += `${encodeString(key)}=${encodedValue} `
   }
 
   return result.trim()
@@ -28,7 +28,7 @@ function encodeString(string: string): string {
     return '""'
   }
 
-  let encoded = string.replace(/["\\]/g, '\\$&').replace(/\n/, '\\n')
+  let encoded = string.replace(/["\\]/g, '\\$&').replace(/\n/, ' ')
 
   if (/[\s=]/.test(encoded)) {
     encoded = `"${encoded}"`

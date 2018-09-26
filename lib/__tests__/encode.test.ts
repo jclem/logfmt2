@@ -1,8 +1,12 @@
-import {encode, Encodeable} from '../logfmt'
+import encode, {Encodeable} from '../encode'
 
 describe('encode', () => {
   it('encodes a string', assertEncodes({foo: 'bar'}, 'foo=bar'))
   it('encodes an empty string', assertEncodes({foo: ''}, 'foo=""'))
+  it(
+    'encodes keys with special characters',
+    assertEncodes({'foo=bar': 'baz'}, '"foo=bar"=baz')
+  )
 
   it(
     'encodes a string with whitespace',
@@ -26,7 +30,7 @@ describe('encode', () => {
 
   it(
     'encodes a string with newlines',
-    assertEncodes({foo: 'bar\nbaz'}, 'foo=bar\\nbaz')
+    assertEncodes({foo: 'bar\nbaz'}, 'foo="bar baz"')
   )
 
   it(
