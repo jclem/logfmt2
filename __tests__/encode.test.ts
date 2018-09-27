@@ -1,8 +1,10 @@
-import encode, {Encodeable} from '../encode'
+import {encode, Encodeable} from '../lib/encode'
 
 describe('encode', () => {
   it('encodes a string', assertEncodes({foo: 'bar'}, 'foo=bar'))
+
   it('encodes an empty string', assertEncodes({foo: ''}, 'foo=""'))
+
   it(
     'encodes keys with special characters',
     assertEncodes({'foo=bar': 'baz'}, '"foo=bar"=baz')

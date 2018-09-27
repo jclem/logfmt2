@@ -3,7 +3,7 @@ export type Encodeable = {[key: string]: any}
 /**
  * Encode an object into the logfmt format.
  */
-export default function encode(obj: Encodeable): string {
+export function encode(obj: Encodeable): string {
   let result = ''
 
   for (const key in obj) {

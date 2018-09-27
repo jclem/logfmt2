@@ -1,5 +1,4 @@
 {
-  "compileOnSave": false,
   "compilerOptions": {
     "target": "es5",
     "module": "commonjs",
@@ -7,10 +6,17 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "removeComments": false,
+    "sourceMap": true,
     "preserveConstEnums": true,
     "skipLibCheck": true,
     "strict": true,
-    "baseUrl": ".",
+    "esModuleInterop": true,
+    "rootDir": "./lib",
     "outDir": "./dist"
-  }
+  },
+  "exclude": [
+    "__tests__",
+    "dist",
+    "node_modules"
+  ]
 }

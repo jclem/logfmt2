@@ -1,9 +1,11 @@
 {
-  "name": "logfmt2",
+  "name": "@jclem/logfmt2",
   "version": "1.0.0",
   "description": "Parses logs and stringifies logs into the logfmt format",
-  "main": "index.js",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "scripts": {
+    "build": "tsc",
     "test": "jest"
   },
   "repository": {
@@ -15,9 +17,6 @@
     "logging"
   ],
   "jest": {
-    "roots": [
-      "<rootDir>/lib"
-    ],
     "transform": {
       "^.+\\.ts$": "ts-jest"
     },

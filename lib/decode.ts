@@ -10,7 +10,7 @@ enum TokenType {
 /**
  * Decode a logfmt line into an object.
  */
-export default function decode(line: string): Encodeable {
+export function decode(line: string): Encodeable {
   const decoded: Encodeable = {}
   const scanner = new StringScanner(line)
 

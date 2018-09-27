@@ -1,5 +1,5 @@
-import decode from '../decode'
-import {Encodeable} from '../encode'
+import {decode} from '../lib/decode'
+import {Encodeable} from '../lib/encode'
 
 describe('decode', () => {
   it('decodes a string', assertDecodes('foo=bar', {foo: 'bar'}))
