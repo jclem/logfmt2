@@ -1,4 +1,6 @@
 __tests__/
 lib/
+node_modules/
 .prettierrc.toml
+Dockerfile
 tsconfig.json

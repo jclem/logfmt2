@@ -8,6 +8,12 @@ logfmt2 (which is based on the original [logfmt](https://github.com/csquared/nod
 npm install @jclem/logfmt2
 ```
 
+## Publish
+
+```
+docker run --rm -it $(docker build -q . --build-arg NPM_TOKEN=$NPM_TOKEN) npm publish
+```
+
 ## Usage
 
 ```javascript
