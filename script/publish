@@ -3,4 +3,4 @@
 set -e
 
 script/build
-npm run publish
+npm publish
