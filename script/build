@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+set -e
+
+# Remove any current build output
+rm -rf dist/
+
+# Recreate the build output directory
+mkdir dist/
+
+# Build the Docker image and get its ID
+iid="$(docker build -q .)"
+
+# Mount the build output directory and run the build script
+docker run --rm -it -v "$(pwd)/dist":/build/dist "$iid" npm run build

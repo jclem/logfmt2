@@ -8,10 +8,18 @@ logfmt2 (which is based on the original [logfmt](https://github.com/csquared/nod
 npm install @jclem/logfmt2
 ```
 
-## Publish
+## Build
 
 ```
-docker run --rm -it $(docker build -q . --build-arg NPM_TOKEN=$NPM_TOKEN) npm publish
+script/build
+```
+
+## Publish
+
+The `script/publish` script cleans the build directory, builds the project, and then runs `npm publish`.
+
+```
+script/publish
 ```
 
 ## Usage
