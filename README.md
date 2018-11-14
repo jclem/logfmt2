@@ -29,3 +29,4 @@ const {encode, decode} = require('@jclem/logfmt2')
 
 console.log(encode({foo: 'bar'})) // foo=bar
 console.log(decode('foo=bar')) // {foo: 'bar'}
+```
