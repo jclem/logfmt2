@@ -46,8 +46,9 @@ export class Logger {
    * Note that this creates a new logger and immediately logs to this logger's
    * stream. Running timers, etc. are not included.
    */
-  logError(error: Error): void {
-    const logger = new Logger({stream: this.stream, context: this.context})
+  logError(error: Error, data: object = {}): void {
+    const context = this.merge(this.context, data)
+    const logger = new Logger({stream: this.stream, context})
     const errorId = this.pseudorandomId()
     const errorContext = {error_id: errorId}
     const errorStack = error.stack ? error.stack.split('\n') : []

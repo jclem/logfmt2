@@ -32,6 +32,14 @@ describe('Logger', () => {
         /^test=test error_id=\d+ name=Error message=Boom\ntest=test error_id=\d+ stackLine="Error: Boom"/
       )
     })
+
+    it('accepts additional data to log', () => {
+      const err = new Error('Boom')
+      logger.logError(err, {foo: 'bar'})
+      expect(stream.toString()).toMatch(
+        /^test=test foo=bar error_id=\d+ name=Error message=Boom\n/
+      )
+    })
   })
 
   describe('time', () => {
