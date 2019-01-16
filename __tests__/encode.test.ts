@@ -1,4 +1,4 @@
-import {encode, Encodeable} from '../lib/encode'
+import {encode, Encodeable, EncodeOptions} from '../lib/encode'
 
 describe('encode', () => {
   it('encodes a string', assertEncodes({foo: 'bar'}, 'foo=bar'))
@@ -7,7 +7,7 @@ describe('encode', () => {
 
   it(
     'encodes keys with special characters',
-    assertEncodes({'foo=bar': 'baz'}, '"foo=bar"=baz')
+    assertEncodes({'foo=bar': 'baz'}, '"foo=bar"=baz', {encodeKeys: true})
   )
 
   it(
@@ -64,6 +64,10 @@ describe('encode', () => {
   )
 })
 
-function assertEncodes(obj: Encodeable, target: string) {
-  return () => expect(encode(obj)).toEqual(target)
+function assertEncodes(
+  obj: Encodeable,
+  target: string,
+  opts: EncodeOptions = {}
+) {
+  return () => expect(encode(obj, opts)).toEqual(target)
 }
