@@ -43,4 +43,8 @@ logger.time('elapsedMs')
 logger.log({foo: 'bar'}) // logs "ns=my-app elapsedMs=50 foo=bar"
 // Wait 50ms
 logger.log({foo: 'bar'}) // logs "ns=my-app elapsedMs=100 foo=bar"
+
+// Add (mutate) the logger context
+logger.appendContext({new_context: 'hello'})
+logger.log({foo: 'bar'}) // logs "ns=my-app new_context=hello elapsedMs=100 foo=bar"
 ```
