@@ -17,6 +17,14 @@ describe('Logger', () => {
     })
   })
 
+  describe('.appendContext', () => {
+    it('adds new context', () => {
+      logger.appendContext({test2: 'test2'})
+      logger.log({foo: 'bar'})
+      expect(stream.toString()).toEqual('test=test test2=test2 foo=bar\n')
+    })
+  })
+
   describe('log', () => {
     it('logs an object with the logger context', () => {
       logger.log({foo: 'bar'})

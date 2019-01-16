@@ -13,9 +13,9 @@ type Timers = {[key: string]: number}
  * An object with optional context state that logs to a stream
  */
 export class Logger {
-  private readonly context: LoggerContext
-  private readonly stream: NodeJS.WritableStream
+  private context: LoggerContext
   private timers: Timers = {}
+  private readonly stream: NodeJS.WritableStream
 
   constructor({stream, context}: LoggerOpts = {}) {
     this.stream = stream || process.stdout
@@ -26,6 +26,13 @@ export class Logger {
     const stream = opts.stream || process.stdout
     const encodedData = encode(data)
     stream.write(`${encodedData}\n`)
+  }
+
+  /**
+   * Append new data to the logger's context.
+   */
+  appendContext(newContext: object): void {
+    this.context = this.mergeContext(newContext)
   }
 
   /**
