@@ -18,6 +18,7 @@
   "exclude": [
     "__tests__",
     "dist",
-    "node_modules"
+    "node_modules",
+    "benchmark.ts"
   ]
 }
