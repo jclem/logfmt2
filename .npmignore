@@ -4,3 +4,4 @@ node_modules/
 .prettierrc.toml
 Dockerfile
 tsconfig.json
+benchmark.ts

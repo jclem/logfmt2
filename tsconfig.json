@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "target": "esnext",
     "module": "commonjs",
     "declaration": true,
     "noUnusedLocals": true,
@@ -11,6 +11,7 @@
     "skipLibCheck": true,
     "strict": true,
     "esModuleInterop": true,
+    "typeRoots": ["node_modules/@types", "types"],
     "rootDir": "./lib",
     "outDir": "./dist"
   },
