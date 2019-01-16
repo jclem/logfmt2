@@ -26,4 +26,17 @@ describe('Logger', () => {
       )
     })
   })
+
+  describe('time', () => {
+    it('adds a new timer', async () => {
+      logger.time('elapsed')
+      await wait(50)
+      logger.log({foo: 'bar'})
+      expect(stream.toString()).toMatch(/^test=test elapsed=\d+ foo=bar\n$/)
+    })
+  })
 })
+
+function wait(ms: number) {
+  return new Promise(res => setTimeout(res, ms))
+}
