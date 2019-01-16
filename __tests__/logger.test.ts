@@ -10,6 +10,13 @@ describe('Logger', () => {
     logger = new Logger({stream, context: {test: 'test'}})
   })
 
+  describe('Logger.log', () => {
+    it('logs an object to the given stream', () => {
+      Logger.log({foo: 'bar'}, {stream})
+      expect(stream.toString()).toEqual('foo=bar\n')
+    })
+  })
+
   describe('log', () => {
     it('logs an object with the logger context', () => {
       logger.log({foo: 'bar'})

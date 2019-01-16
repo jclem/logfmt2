@@ -22,6 +22,12 @@ export class Logger {
     this.context = context || {}
   }
 
+  static log(data: object, opts: {stream?: NodeJS.WritableStream} = {}): void {
+    const stream = opts.stream || process.stdout
+    const encodedData = encode(data)
+    stream.write(`${encodedData}\n`)
+  }
+
   /**
    * Log a message to the logger's stream.
    */

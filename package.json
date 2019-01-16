@@ -1,6 +1,6 @@
 {
   "name": "@jclem/logfmt2",
-  "version": "2.1.1",
+  "version": "2.2.0",
   "description": "Parses logs and stringifies logs into the logfmt format",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
