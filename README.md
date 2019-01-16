@@ -25,8 +25,22 @@ script/publish
 ## Usage
 
 ```javascript
-const {encode, decode} = require('@jclem/logfmt2')
+const {Logger, encode, decode} = require('@jclem/logfmt2')
 
 console.log(encode({foo: 'bar'})) // foo=bar
 console.log(decode('foo=bar')) // {foo: 'bar'}
+
+// Use the static `Logger.log` to stdout
+Logger.log({foo: 'bar'}) // logs "foo=bar"
+
+// Create a logger to maintain a logging context
+const logger = new Logger({ns: 'my-app'})
+logger.log({foo: 'bar'}) // logs "ns=my-app foo=bar"
+
+// Add timers
+logger.time('elapsedMs')
+// Wait 50ms
+logger.log({foo: 'bar'}) // logs "ns=my-app elapsedMs=50 foo=bar"
+// Wait 50ms
+logger.log({foo: 'bar'}) // logs "ns=my-app elapsedMs=100 foo=bar"
 ```
