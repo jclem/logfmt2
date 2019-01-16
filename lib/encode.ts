@@ -38,7 +38,8 @@ function encodeString(string: string): string {
     return '""'
   }
 
-  let encoded = string.replace(/["\\]/g, '\\$&').replace(/\n/, ' ')
+  let encoded = string.split(/\n/g).join(' ')
+  if (/["\\]/.test(encoded)) encoded = encoded.replace(/["\\]/g, '\\$&')
 
   if (/[\s=]/.test(encoded)) {
     encoded = `"${encoded}"`
