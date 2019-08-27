@@ -1,6 +1,6 @@
 # logfmt2
 
-![](https://github.com/jclem/logfmt2/workflows/.github/workflows/ci.yml/badge.svg)
+![](https://github.com/jclem/logfmt2/workflows/Test%20%26%20Benchmark/badge.svg)
 
 logfmt2 (which is based on the original [logfmt](https://github.com/csquared/node-logfmt) and the original [blog post](https://brandur.org/logfmt) is a module for encoding objects into the logfmt format and decoding them again.
 
