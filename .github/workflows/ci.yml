@@ -1,0 +1,16 @@
+name: Test & Benchmark
+
+on:
+  push: {branches: master}
+  pull_request: {branches: master}
+  
+jobs:
+  test_and_benchmark:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/setup-node@v1.1.2
+      with: {node-version: 12.x}
+    - uses: actions/checkout@v1.0.0
+    - run: npm ci
+    - run: npm test
+    - run: npm benchmark
