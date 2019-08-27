@@ -3,6 +3,7 @@ name: Test & Benchmark
 on:
   push: {branches: master}
   pull_request: {branches: master}
+  repository_dispatch:
   
 jobs:
   test_and_benchmark:
