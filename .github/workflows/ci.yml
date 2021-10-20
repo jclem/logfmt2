@@ -1,9 +1,9 @@
 name: Test & Benchmark
 
 on:
-  push: {branches: main}
-  pull_request: {branches: main}
-  repository_dispatch:
+  push: {branches: [main]}
+  pull_request: {branches: [main]}
+  workflow_dispatch:
   
 jobs:
   test_and_benchmark:
