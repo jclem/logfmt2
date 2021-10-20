@@ -2,9 +2,12 @@
  * Scans over a string, character by character
  */
 export default class StringScanner {
-  pos = 0
+  // https://twitter.com/_clem/status/1450855791037227013?s=21
+  declare pos: number
 
-  constructor(private readonly data: string) {}
+  constructor(private readonly data: string) {
+    this.pos = 0
+  }
 
   /**
    * Fetch the next character.
