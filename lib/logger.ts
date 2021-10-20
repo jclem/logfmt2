@@ -1,11 +1,10 @@
+import {Encodeable} from '.'
 import {encode} from './encode'
 
 type LoggerOpts = {
   stream?: NodeJS.WritableStream
-  context?: LoggerContext
+  context?: Encodeable
 }
-
-type LoggerContext = {[key: string]: any}
 
 type Timers = {[key: string]: number}
 
@@ -13,7 +12,7 @@ type Timers = {[key: string]: number}
  * An object with optional context state that logs to a stream
  */
 export class Logger {
-  private context: LoggerContext
+  private context: Encodeable
   private timers: Timers = {}
   private readonly stream: NodeJS.WritableStream
 
@@ -22,7 +21,10 @@ export class Logger {
     this.context = context || {}
   }
 
-  static log(data: object, opts: {stream?: NodeJS.WritableStream} = {}): void {
+  static log(
+    data: Encodeable,
+    opts: {stream?: NodeJS.WritableStream} = {}
+  ): void {
     const stream = opts.stream || process.stdout
     const encodedData = encode(data)
     stream.write(`${encodedData}\n`)
@@ -31,14 +33,14 @@ export class Logger {
   /**
    * Append new data to the logger's context.
    */
-  appendContext(newContext: object): void {
+  appendContext(newContext: Encodeable): void {
     this.context = this.mergeContext(newContext)
   }
 
   /**
    * Log a message to the logger's stream.
    */
-  log(data: object = {}): void {
+  log(data: Encodeable = {}): void {
     const timersObj = this.getTimersState()
     const encodedData = encode(this.mergeContext(timersObj, data))
     this.stream.write(`${encodedData}\n`)
@@ -53,7 +55,7 @@ export class Logger {
    * Note that this creates a new logger and immediately logs to this logger's
    * stream. Running timers, etc. are not included.
    */
-  logError(error: Error, data: object = {}): void {
+  logError(error: Error, data: Encodeable = {}): void {
     const context = this.merge(this.context, data)
     const logger = new Logger({stream: this.stream, context})
     const errorId = this.pseudorandomId()
@@ -93,11 +95,11 @@ export class Logger {
     return timers
   }
 
-  private merge(...data: object[]): object {
+  private merge(...data: Encodeable[]): Encodeable {
     return Object.assign({}, ...data)
   }
 
-  private mergeContext(...data: object[]): object {
+  private mergeContext(...data: Encodeable[]): Encodeable {
     return Object.assign({}, this.context, ...data)
   }
 

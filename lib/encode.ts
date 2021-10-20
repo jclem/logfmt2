@@ -1,4 +1,4 @@
-export type Encodeable = {[key: string]: any}
+export type Encodeable = {[key: string]: unknown}
 
 export type EncodeOptions = {
   encodeKeys?: boolean
@@ -22,7 +22,7 @@ export function encode(obj: Encodeable, opts: EncodeOptions = {}): string {
     if (value == null) {
       encodedValue = ''
     } else {
-      encodedValue = encodeString(value.toString())
+      encodedValue = encodeString(String(value))
     }
 
     const keyString = opts.encodeKeys ? encodeString(key) : key

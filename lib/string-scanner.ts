@@ -2,7 +2,7 @@
  * Scans over a string, character by character
  */
 export default class StringScanner {
-  pos: number = 0
+  pos = 0
 
   constructor(private readonly data: string) {}
 

@@ -17,8 +17,8 @@ export function decode(line: string): Encodeable {
   let tokenType: TokenType = TokenType.Garbage
   let ch: string | undefined
 
-  let key: string = ''
-  let value: string = ''
+  let key = ''
+  let value = ''
 
   while ((ch = scanner.next())) {
     switch (tokenType) {
