@@ -1,9 +1,9 @@
 __tests__/
+.*
+.github/
+*.yml
+benchmark.ts
 lib/
 node_modules/
-.prettierrc.toml
-Dockerfile
 tsconfig.json
-benchmark.ts
 types/
-.github/
