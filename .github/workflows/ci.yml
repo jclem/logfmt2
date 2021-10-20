@@ -4,17 +4,19 @@ on:
   push: {branches: [main]}
   pull_request: {branches: [main]}
   workflow_dispatch:
-  
+
 jobs:
   test_and_benchmark:
     name: Test and benchmark
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout ref
-      uses: actions/checkout@v2
-    - name: Preparation
-      uses: ./.github/actions/setup
-    - name: Run tests
-      run: npm test
-    - name: Run benchmarks
-      run: npm run benchmark
+      - name: Checkout ref
+        uses: actions/checkout@v2
+      - name: Preparation
+        uses: ./.github/actions/setup
+      - name: Run checks
+        run: npm run check
+      - name: Run tests
+        run: npm test
+      - name: Run benchmarks
+        run: npm run benchmark

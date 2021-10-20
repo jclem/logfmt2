@@ -19,7 +19,7 @@ function benchmarkDecode() {
     .add('logfmt2#decode', () => {
       decode(encoded)
     })
-    .on('complete', function() {
+    .on('complete', function () {
       suite.forEach((benchmark: Benchmark) => console.log(benchmark.toString()))
       console.log(
         `Fastest is ${suite
@@ -41,7 +41,7 @@ function benchmarkEncode() {
     .add('logfmt2#encode', () => {
       encode(decoded)
     })
-    .on('complete', function() {
+    .on('complete', function () {
       suite.forEach((benchmark: Benchmark) => console.log(benchmark.toString()))
       console.log(
         `Fastest is ${suite

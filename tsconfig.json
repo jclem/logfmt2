@@ -15,10 +15,5 @@
     "rootDir": "./lib",
     "outDir": "./dist"
   },
-  "exclude": [
-    "__tests__",
-    "dist",
-    "node_modules",
-    "benchmark.ts"
-  ]
+  "exclude": ["__tests__", "dist", "node_modules", "benchmark.ts"]
 }
