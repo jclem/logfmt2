@@ -13,7 +13,7 @@ jobs:
     - name: Checkout ref
       uses: actions/checkout@v2
     - name: Preparation
-      uses: ./.github/actions/prepare
+      uses: ./.github/actions/setup
     - name: Run tests
       run: npm test
     - name: Run benchmarks
