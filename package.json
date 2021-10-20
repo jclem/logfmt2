@@ -1,7 +1,7 @@
 {
   "name": "@jclem/logfmt2",
   "description": "Parses logs and stringifies logs into the logfmt format",
-  "version": "2.4.2",
+  "version": "2.4.3",
   "author": "Jonathan Clem <jonathan@jclem.net>",
   "bugs": {
     "url": "https://github.com/jclem/logfmt2/issues"
