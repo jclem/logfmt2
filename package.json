@@ -1,39 +1,11 @@
 {
   "name": "@jclem/logfmt2",
-  "version": "2.4.2",
   "description": "Parses logs and stringifies logs into the logfmt format",
-  "main": "./dist/index.js",
-  "types": "./dist/index.d.ts",
-  "scripts": {
-    "benchmark": "ts-node ./benchmark.ts",
-    "build": "tsc",
-    "test": "jest"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/jclem/logfmt2.git"
-  },
-  "keywords": [
-    "logfmt",
-    "logging"
-  ],
-  "jest": {
-    "testEnvironment": "node",
-    "transform": {
-      "^.+\\.ts$": "ts-jest"
-    },
-    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.tsx?$",
-    "moduleFileExtensions": [
-      "js",
-      "ts"
-    ]
-  },
+  "version": "2.4.2",
   "author": "Jonathan Clem <jclem@github.com>",
-  "license": "MIT",
   "bugs": {
     "url": "https://github.com/jclem/logfmt2/issues"
   },
-  "homepage": "https://github.com/jclem/logfmt2#readme",
   "devDependencies": {
     "@types/benchmark": "^1.0.31",
     "@types/jest": "^23.3.2",
@@ -47,5 +19,33 @@
     "ts-node": "^7.0.1",
     "tslint": "^5.11.0",
     "typescript": "^3.0.3"
-  }
+  },
+  "homepage": "https://github.com/jclem/logfmt2#readme",
+  "jest": {
+    "testEnvironment": "node",
+    "transform": {
+      "^.+\\.ts$": "ts-jest"
+    },
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.tsx?$",
+    "moduleFileExtensions": [
+      "js",
+      "ts"
+    ]
+  },
+  "keywords": [
+    "logfmt",
+    "logging"
+  ],
+  "license": "MIT",
+  "main": "./dist/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jclem/logfmt2.git"
+  },
+  "scripts": {
+    "benchmark": "ts-node ./benchmark.ts",
+    "build": "tsc",
+    "test": "jest"
+  },
+  "types": "./dist/index.d.ts"
 }
